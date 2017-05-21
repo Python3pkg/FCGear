@@ -19,7 +19,7 @@
 #*                                                                         *
 #***************************************************************************
 
-from __future__ import division
+
 from numpy import tan, cos, sin, sqrt, arctan, pi, array, linspace, transpose, vstack, ndarray
 from ._functions import nearestpts, rotation, reflection, trimfunc, norm, translation
 import numpy as np
@@ -39,7 +39,7 @@ class involute_tooth():
         self._calc_gear_factors()
 
     def _calc_gear_factors(self):
-        print(self.head)
+        print((self.head))
         self.pressure_angle_t = arctan(tan(self.pressure_angle) / cos(self.beta))
         self.m = self.m_n / cos(self.beta)
         self.c = self.clearance * self.m_n

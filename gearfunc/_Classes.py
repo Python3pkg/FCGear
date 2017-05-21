@@ -19,7 +19,7 @@
 #*                                                                         *
 #***************************************************************************
 
-from __future__ import division
+
 import os
 import FreeCAD as App
 from ._involute_tooth import involute_tooth, involute_rack
@@ -394,7 +394,7 @@ class bevel_gear():
                 w1.append(i_scale)
             w.append(w1)
         surfs = []
-        w_t = zip(*w)
+        w_t = list(zip(*w))
         for i in w_t:
             b = BSplineSurface()
             b.interpolate(i)
@@ -407,7 +407,7 @@ class bevel_gear():
         rotated_pts = scaled_points
         rot = rotation3D(- 2 * i * pi / teeth)
         for i in range(teeth - 1):
-            rotated_pts = map(rot, rotated_pts)
+            rotated_pts = list(map(rot, rotated_pts))
             pts.append(numpy.array([pts[-1][-1], rotated_pts[0][0]]))
             pts += rotated_pts
         s = Wire(Shape(w1).Edges)

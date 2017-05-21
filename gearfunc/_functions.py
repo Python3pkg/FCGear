@@ -19,7 +19,7 @@
 #*                                                                         *
 #***************************************************************************
 
-from __future__ import division
+
 from numpy import sin, cos, dot, array, ndarray, vstack, transpose, sqrt
 from numpy.linalg import solve
 import numpy as np
